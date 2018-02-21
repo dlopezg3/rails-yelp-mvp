@@ -1,0 +1,21 @@
+
+<div class="row text-center">
+  <div class="col-xs-6">
+    <h1 > Yelp Restaurants</h1>
+  </div>
+  <div class="col-xs-6 text-right">
+    <%= link_to "Create Restaurant", new_restaurant_path, class: "btn btn-success btn-margin" %>
+  </div>
+</div>
+
+<div class=" row text-center">
+  <div class="col-xs-4">
+    <% @restaurants.each do |r| %>
+    <h2> <%= link_to r.name, restaurant_path(r) %> </h2>
+    <% end %>
+  </div>
+</div>
+
+
+
+
