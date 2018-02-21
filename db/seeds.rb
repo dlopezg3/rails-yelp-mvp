@@ -17,7 +17,7 @@ require 'faker'
   restaurant.save
 end
 
-30.times do
+300.times do
   v_content = Faker::HowIMetYourMother.quote
   v_rating = (0..5).to_a.sample
   v_restaurant = (1..29).to_a.sample

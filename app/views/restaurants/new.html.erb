@@ -1,17 +1,19 @@
-<% simple_form_for [@restaurant] do |f| %>
-  <%= f.label :name %>
-  <%= f.input :name %>
+<div class="container">
+  <div class="row">
 
-  <%= f.label :address %>
-  <%= f.input :address%>
+    <h1> Add a Review</h1>
+    <%= simple_form_for [@restaurant] do |f| %>
+      <%= f.input :name %>
 
-  <%= f.label :phone_number %>
-  <%= f.input :phone_number%>
+      <%= f.input :address%>
 
-  <%= f.label :category %>
-  <%= f.input :category%>
+      <%= f.input :phone_number%>
 
-  <%=  f.submit "create restaurant", class: "btn btn-primary" %>
+      <%= f.input :category%>
 
-<% end %>
+      <%=  f.submit "create restaurant", class: "btn btn-primary" %>
+
+    <% end %>
+  </div>
+</div>
 

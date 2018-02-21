@@ -1,5 +1,23 @@
 <h1> <%= @restaurant.name %> </h1>
 <h6> Addres: <%= @restaurant.address %> </h6>
 <h6> Phone Number: <%= @restaurant.phone_number %> </h6>
-<h2> Type of food: <%= @restaurant.category.capitalize %> </h2>
-<h6> <%= link_to "Go to restaurants", restaurants_path %> </h6>
+<h3> Type of food: <%= @restaurant.category == "" ? "undefined" : @restaurant.category.capitalize %> </h3>
+
+<div class="row">
+  <div class="col-xs-2 text-center">
+    <%= link_to "Go to restaurants", restaurants_path, class: "btn btn-primary btn-margin" %>
+  </div>
+
+  <div class="col-xs-2 text-center">
+    <%= link_to "Add review", new_restaurant_review_path(@restaurant), class: "btn btn-success btn-margin" %>
+  </div>
+</div>
+
+<div class="reviews-msg">
+  <h2> Reviews </h2>
+  <% @restaurant.reviews.each do |rev| %>
+    <h4> rating: <%= rev.rating %> </h4>
+    <p> <%= rev.content %> </p>
+  <% end %>
+</div>
+
